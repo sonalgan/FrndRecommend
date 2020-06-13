@@ -1,0 +1,173 @@
+<!DOCTYPE
+ html>
+<html>
+  <head>
+    <title>Simple registration form</title>
+    <link 
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" 
+rel="stylesheet">
+    <link rel="stylesheet" 
+href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" 
+integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+ crossorigin="anonymous">
+ <link rel="stylesheet" href="styles.css" >
+    <script>
+	var random_images_array = ['01.png', '02.png', '03.png','04.png','05.png','06.png','07.png','08.png','09.png'];
+  var display_arr=[]
+  var chosen_arr=[]
+  var a1=false;
+ 	function getRandomImage(imgAr, path) {
+    imgAr= ['01.png', '02.png', '03.png','04.png','05.png','06.png','07.png','08.png','09.png'];
+    path = path || 'pics/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+
+    var imgStr = '<img src="' + path + img + '" alt = "" id = "iconimg">';
+    document.write(imgStr);
+    var temp=random_images_array.splice(num,1)
+    display_arr.push(temp)
+    document.close();
+    return temp
+
+}
+function addvalue(obj){
+    var temp= obj.name;
+    if(obj.value=="on"){
+        chosen_arr.push(temp);
+     // document.getElementById(obj.id).style.boxShadow =0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 #26a9e0;
+      obj.value="off";
+      //document.write(obj.value);
+      window.alert(obj.name);
+    }
+    else if(obj.value=="off"){
+        var ind=chosen_arr.indexOf(temp);
+        chosen_arr.slice(ind,1);
+        obj.value="on";
+      alert('clicked');
+     // document.getElementById(obj.id).style.box-shadow= 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    document.getElementById(obj.id).value=obj.value;
+  }
+function toggle(obj){
+  if(obj.value=="on"){
+    obj.value="off";
+  }
+  else if(obj.value=="off"){
+    obj.value="on";
+  }
+  //document.getElementById(obj.id).value=obj.value;
+
+}
+
+    
+
+    </script>
+   
+  </head>
+  <body>
+    <form action="action.php" method="get">
+    <div class="main-block">
+      <h1>Registration</h1>
+
+    
+      
+ 
+    <div class="row">
+        <div class="column">
+          <!-- <script type="text/javascript">
+          //a=getRandomImage(random_images_array);
+          //document.getElementById("ig4").addEventListener("click", addvalue(this)); 
+          </script> -->
+          <img src="pics/01.png" id = "iconimg">
+          </br>
+          <input id="ig1" value="off" name='a' type="checkbox" style="position:relative;" /*onclick="toggle(this);"*/>
+
+        </div>
+        <div class="column">
+          <img src="pics/02.png" id = "iconimg">
+          </br>
+          <input id="ig2" value="off" name='b' type="checkbox" style="position:relative;" onclick="toggle(this);" >
+  
+          <!-- <button id="ig5" type="button"><script type="text/javascript">a=getRandomImage(random_images_array);
+          document.getElementById("ig5").value = a;
+          var a5=false;
+          document.getElementById("ig5").addEventListener("click", addvalue(this.id,a5)); 
+          </script></button> -->
+
+        </div>
+        <div class="column">
+          <img src="pics/03.png" id = "iconimg">
+          </br>
+          <input id="ig3" value="off" name='c' type="checkbox" style="position:relative;" onclick="toggle(this);" >
+
+        </div>
+
+      </div>
+      <div class="row">
+      <div class="column">
+        <!-- <script type="text/javascript">
+        //a=getRandomImage(random_images_array);
+        //document.getElementById("ig4").addEventListener("click", addvalue(this)); 
+        </script> -->
+        <img src="pics/04.png" id = "iconimg">
+        </br>
+        <input id="ig4" value="off" name='d' type="checkbox" style="position:relative;" onclick="toggle(this);" >
+
+      </div>
+      <div class="column">
+        <img src="pics/05.png" id = "iconimg">
+        </br>
+        <input id="ig5" value="off" name='e' type="checkbox" style="position:relative;" onclick="toggle(this);">
+
+        <!-- <button id="ig5" type="button"><script type="text/javascript">a=getRandomImage(random_images_array);
+        document.getElementById("ig5").value = a;
+        var a5=false;
+        document.getElementById("ig5").addEventListener("click", addvalue(this.id,a5)); 
+        </script></button> -->
+
+      </div>
+      <div class="column">
+        <img src="pics/06.png" id = "iconimg">
+        </br>
+        <input id="ig6" value="off" name='f' type="checkbox" style="position:relative;" onclick="toggle(this);">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <!-- <script type="text/javascript">
+        //a=getRandomImage(random_images_array);
+        //document.getElementById("ig4").addEventListener("click", addvalue(this)); 
+        </script> -->
+        <img src="pics/07.png" id = "iconimg">
+        </br>
+        <input id="ig7" value="off" name='g' type="checkbox" style="position:relative;" onclick="toggle(this);" >
+
+      </div>
+      <div class="column">
+        <img src="pics/08.png" id = "iconimg">
+        </br>
+        <input id="ig8" value="off" name='h' type="checkbox" style="position:relative;" onclick="toggle(this);">
+
+        <!-- <button id="ig5" type="button"><script type="text/javascript">a=getRandomImage(random_images_array);
+        document.getElementById("ig5").value = a;
+        var a5=false;
+        document.getElementById("ig5").addEventListener("click", addvalue(this.id,a5)); 
+        </script></button> -->
+
+      </div>
+      <div class="column">
+        <img src="pics/09.png" id = "iconimg">
+        </br>
+        <input id="ig9" value="off" name='i' type="checkbox" style="position:relative;" onclick="toggle(this);">
+
+      </div>
+    </div>
+    </div>
+    <button type="submit" value="Submit"  >Submit</button>
+    
+    
+    </div>
+  </form>
+  </body>
+</html>
